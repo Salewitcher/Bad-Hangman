@@ -1,3 +1,9 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Create a function that prints a welcome message to the user
+def welcome_message():
+    print("Welcome to the Bad-Hangman game !")
+    print("It is a game i'm sure a lot of you know.")
+    print("It was fun to play it in the past")
+    print("at least for those of you that are my age")
+    print("and still remember it :)")
+    print("Have fun !!!")
+welcome_message()
