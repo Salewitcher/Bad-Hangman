@@ -1,5 +1,6 @@
 import random
 
+
 # A function that prints a welcome message to the user
 def welcome_message():
     print("Welcome to the Bad-Hangman game !")
@@ -13,9 +14,18 @@ def welcome_message():
     print("Have fun !!!")
 
 
+# Function to choose a random word for the user to guess
+def choose_word():
+    # List of Witcher character names
+    witcher_characters = ["geralt", "yennefer", "triss", "cirilla", "dandelion", "eredin", "vesemir", "lambert", "karadin", "imlerith"]
+    # Choose a random word from the list
+    return random.choice(witcher_characters)
+
+
 # Function to play the game calling all other functions
 def play_hangman():
     welcome_message()
+    word = choose_word()
 
 
 # Play the game
