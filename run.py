@@ -5,5 +5,8 @@ def welcome_message():
     print("It was fun to play it in the past")
     print("at least for those of you that are my age")
     print("and still remember it :)")
+    print("HINT !")
+    print("The words are characters from The Witcher Universe")
+    print("Try to quess letter by letter")
     print("Have fun !!!")
 welcome_message()
