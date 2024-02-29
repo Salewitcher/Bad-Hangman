@@ -14,7 +14,7 @@ def welcome_message():
     print("Have fun !!!")
 
 
-# Function to choose a random word for the user to guess
+# A function to choose a random word for the user to guess
 def choose_word():
     # List of Witcher character names
     witcher_characters = ["geralt", "yennefer", "triss", "cirilla", "dandelion", "eredin", "vesemir", "lambert", "karadin", "imlerith"]
@@ -22,7 +22,18 @@ def choose_word():
     return random.choice(witcher_characters)
 
 
-# Function to play the game calling all other functions
+# A function to display the hidden word with underscores for unknown letters
+def display_word(word, guessed_letters):
+    display = ""
+    for letter in word:
+        if letter in guessed_letters:
+            display += letter
+        else:
+            display += "_"
+    print(display)
+
+
+# A function to play the game calling all other functions
 def play_hangman():
     welcome_message()
     word = choose_word()
