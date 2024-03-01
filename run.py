@@ -52,5 +52,26 @@ def play_hangman():
     max_attempts = 15
 
 
+    # Code idea from "https://stackoverflow.com/"
+    # While loop to call functions and add guessed letters to answer
+    while True:
+        print("\n")
+        display_word(word, guessed_letters)
+        guess = take_guess()
+        guessed_letters.add(guess)
+        # Counter for mistakes
+        if guess not in word:
+            incorrect_guesses += 1
+            print("Incorrect guess!")
+            # End game if counter reaches 15 and print the right amswer
+            if incorrect_guesses >= max_attempts:
+                print("Sorry, you lost. The word was:", word)
+                break
+        # Win message    
+        if all(letter in guessed_letters for letter in word):
+            print("Congratulations, you won!")
+            break
+
+
 # Play the game
 play_hangman()   
