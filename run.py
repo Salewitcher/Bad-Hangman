@@ -33,11 +33,23 @@ def display_word(word, guessed_letters):
     print(display)
 
 
+# A function with an input for the user to guess a letter
+def take_guess():
+    guess = input("Guess a letter: ").lower()
+    # Validate the guess
+    if len(guess) != 1 or not guess.isalpha():
+        print("Please enter a single letter.")
+        return take_guess()
+    return guess
+
+
 # A function to play the game calling all other functions
 def play_hangman():
     welcome_message()
     word = choose_word()
     guessed_letters = set()
+    incorrect_guesses = 0
+    max_attempts = 15
 
 
 # Play the game
