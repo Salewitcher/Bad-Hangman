@@ -10,7 +10,7 @@ def welcome_message():
     print("and still remember it :)")
     print("HINT !")
     print("The words are characters from The Witcher Universe")
-    print("Try to quess letter by letter")
+    print("Try to guess letter by letter")
     print("Have fun !!!")
 
 
@@ -37,6 +37,7 @@ def display_word(word, guessed_letters):
 def play_hangman():
     welcome_message()
     word = choose_word()
+    guessed_letters = set()
 
 
 # Play the game
