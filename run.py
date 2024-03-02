@@ -64,8 +64,9 @@ def play_hangman():
         if guess not in word:
             incorrect_guesses += 1
             attempts_left -= 1
+            attempts_left_str = str(attempts_left)
             print("Incorrect guess!")
-            print(f"Attempts left: {attempts_left}")
+            print(f"Attempts left: {attempts_left_str}")
             # End game if counter reaches 15 and print the right amswer
             if incorrect_guesses >= max_attempts:
                 print("Sorry, you lost. The word was:", word)
