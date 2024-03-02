@@ -17,7 +17,10 @@ def welcome_message():
 # A function to choose a random word for the user to guess
 def choose_word():
     # List of Witcher character names
-    witcher_characters = ["geralt", "yennefer", "triss", "cirilla", "dandelion", "eredin", "vesemir", "lambert", "karadin", "imlerith"]
+    witcher_characters = ["geralt",
+                          "yennefer", "triss", "cirilla",
+                          "dandelion", "eredin", "vesemir",
+                          "lambert", "karadin", "imlerith"]
     # Choose a random word from the list
     return random.choice(witcher_characters)
 
@@ -53,7 +56,7 @@ def play_hangman():
     max_attempts = 15
 
 
-    # Code idea from "https://stackoverflow.com/"
+# Code idea from "https://stackoverflow.com/"
     # While loop to call functions and add guessed letters to answer
     while True:
         print("\n")
@@ -71,18 +74,19 @@ def play_hangman():
             if incorrect_guesses >= max_attempts:
                 print("Sorry, you lost. The word was:", word)
                 break
-        # Win message    
+        # Win message
         if all(letter in guessed_letters for letter in word):
             print("Congratulations, you won!")
             break
 
 
-    # Play again or quit input        
+# Play again or quit input
     play_again = input("Do you want to play again? (Y/N):\n").upper()
     if play_again == "Y":
         play_hangman()
     else:
-        print("Thanks for playing!")        
+        print("Thanks for playing!")
+
 
 # Play the game
-play_hangman()   
+play_hangman()
