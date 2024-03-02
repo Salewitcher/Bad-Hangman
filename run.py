@@ -72,6 +72,12 @@ def play_hangman():
             print("Congratulations, you won!")
             break
 
+    # Play again or quit input        
+    play_again = input("Do you want to play again? (Y/N): ").upper()
+    if play_again == "Y":
+        play_hangman()
+    else:
+        print("Thanks for playing!")        
 
 # Play the game
 play_hangman()   
