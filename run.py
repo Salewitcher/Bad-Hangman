@@ -5,7 +5,7 @@ import random
 def welcome_message():
     print("Welcome to the Bad-Hangman game !")
     print("It is a game i'm sure a lot of you know.")
-    print("It was fun to play it in the past")
+    print("It was fun to play it in the past,")
     print("at least for those of you that are my age")
     print("and still remember it :)")
     print("HINT !")
@@ -49,6 +49,7 @@ def play_hangman():
     word = choose_word()
     guessed_letters = set()
     incorrect_guesses = 0
+    attempts_left = 15
     max_attempts = 15
 
 
@@ -62,7 +63,9 @@ def play_hangman():
         # Counter for mistakes
         if guess not in word:
             incorrect_guesses += 1
+            attempts_left -= 1
             print("Incorrect guess!")
+            print(f"Attempts left: {attempts_left}")
             # End game if counter reaches 15 and print the right amswer
             if incorrect_guesses >= max_attempts:
                 print("Sorry, you lost. The word was:", word)
@@ -71,6 +74,7 @@ def play_hangman():
         if all(letter in guessed_letters for letter in word):
             print("Congratulations, you won!")
             break
+
 
     # Play again or quit input        
     play_again = input("Do you want to play again? (Y/N): ").upper()
