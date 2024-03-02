@@ -35,7 +35,7 @@ def display_word(word, guessed_letters):
 
 # A function with an input for the user to guess a letter
 def take_guess():
-    guess = input("Guess a letter: ").lower()
+    guess = input("Guess a letter:\n").lower()
     # Validate the guess
     if len(guess) != 1 or not guess.isalpha():
         print("Please enter a single letter.")
@@ -78,7 +78,7 @@ def play_hangman():
 
 
     # Play again or quit input        
-    play_again = input("Do you want to play again? (Y/N): ").upper()
+    play_again = input("Do you want to play again? (Y/N):\n").upper()
     if play_again == "Y":
         play_hangman()
     else:
