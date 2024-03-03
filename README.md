@@ -28,6 +28,7 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 7. **Win or Lose**: The game was tested to ensure correct outcomes when winning or losing. Winning occurred when the word was guessed within the allowed attempts, while losing occurred when the attempts were exhausted.
 8. **Play Again**: After each game session, the option to play again was selected to verify that the game restarted correctly.
 9. **PEP8**: Passed the code through a PEP8 linter and confirmed there are no problems.
+![PEP8 Validation](media/CI_Python_Linter_Validation.png)
 
 ## Bugs
 
@@ -37,6 +38,18 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 ## Remainig Bugs
 
 - No bugs remaining.
+
+## Credits
+
+- Part of code idea from [Stack Overflow](https://stackoverflow.com/).
+
+## Deployment
+
+1. Fork or clone this repository.
+2. Create a new Heroku app.
+3. Set the buildbacks to "Python" and "NodeJS" in that order.
+4. Link the Heroku app to the repository.
+5. Click on "Deploy".
 
 ## Dependencies
 
