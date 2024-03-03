@@ -14,8 +14,10 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 
 - **Random Word Selection**: A random word from the Witcher Universe is chosen for each game session.
 - **Interactive Interface**: The game provides interactive prompts and messages to guide the user through the gameplay.
-- **Hints**: Players are given hints that the words are characters from The Witcher Universe.
-- **Play Again**: After each game session, players have the option to play again.
+- **Counter**: A Counter for attempts left and maximum attempts.
+- **Play Again**: After each game session, players have the option to play again or quit.
+![Counter, quit, random word](media/Counter_quit_play_again_random.png).
+![Counter, play again, random word](media/Win_Play_again.png).
 
 ## Testing
 
