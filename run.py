@@ -40,6 +40,21 @@ def display_word(word, guessed_letters):
     print(display)
 
 
+def draw_hangman(incorrect_guesses):
+    """Draws the hangman based on the number of incorrect guesses."""
+    hangman = [
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |  / \ 
+        |  ___
+        |  |||
+      =========
+        """,    
+
+
 # Code idea from "https://stackoverflow.com/"
 def take_guess(guessed_letters):
     """
@@ -75,6 +90,7 @@ def play_hangman():
     while True:
         print("\n")
         display_word(word, guessed_letters)
+        draw_hangman(incorrect_guesses)
         guess = take_guess(guessed_letters)
         guessed_letters.add(guess)
         # Counter for mistakes
