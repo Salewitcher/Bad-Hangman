@@ -1,8 +1,7 @@
 import random
 
-
-# A function that prints a welcome message to the user
 def welcome_message():
+    """Prints a welcome message to the user."""
     print("Welcome to the Bad-Hangman game !")
     print("It is a game i'm sure a lot of you know.")
     print("It was fun to play it in the past,")
@@ -13,20 +12,22 @@ def welcome_message():
     print("Try to guess letter by letter")
     print("Have fun !!!")
 
-
-# A function to choose a random word for the user to guess
 def choose_word():
-    # List of Witcher character names
+    """Choose a random word for the user to guess."""
     witcher_characters = ["geralt",
                           "yennefer", "triss", "cirilla",
                           "dandelion", "eredin", "vesemir",
                           "lambert", "karadin", "imlerith"]
-    # Choose a random word from the list
     return random.choice(witcher_characters)
 
-
-# A function to display the hidden word with underscores for unknown letters
 def display_word(word, guessed_letters):
+    """
+    Display the hidden word with underscores for unknown letters.
+
+    Args:
+    word (str): The word to display.
+    guessed_letters (set): A set containing the letters guessed by the user.
+    """
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -35,9 +36,16 @@ def display_word(word, guessed_letters):
             display += "_"
     print(display)
 
-
-# A function with an input for the user to guess a letter
 def take_guess(guessed_letters):
+    """
+    Prompt the user to guess a letter.
+
+    Args:
+    guessed_letters (set): A set containing the letters guessed by the user.
+
+    Returns:
+    str: The letter guessed by the user.
+    """
     guess = input("Guess a letter:\n").strip().lower()
     # Validate the guess
     if len(guess) != 1 or not guess.isalpha():
@@ -48,16 +56,14 @@ def take_guess(guessed_letters):
         return take_guess(guessed_letters)
     return guess
 
-
-# A function to play the game calling all other functions
 def play_hangman():
+    """Play the Bad-Hangman game."""
     welcome_message()
     word = choose_word()
     guessed_letters = set()
     incorrect_guesses = 0
     attempts_left = 15
     max_attempts = 15
-
 
     # While loop to call functions and add guessed letters to answer
     while True:
@@ -72,7 +78,7 @@ def play_hangman():
             attempts_left_str = str(attempts_left)
             print("Incorrect guess!")
             print(f"Attempts left: {attempts_left_str}")
-            # End game if counter reaches 15 and print the right amswer
+            # End game if counter reaches 15 and print the right answer
             if incorrect_guesses >= max_attempts:
                 print("Sorry, you lost. The word was:", word)
                 break
@@ -81,14 +87,12 @@ def play_hangman():
             print("Congratulations, you won!")
             break
 
-
     # Play again or quit input
     play_again = input("Do you want to play again? (Y/N):\n").upper()
     if play_again == "Y":
         play_hangman()
     else:
         print("Thanks for playing!")
-
 
 # Play the game
 play_hangman()
