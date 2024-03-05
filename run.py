@@ -1,5 +1,6 @@
 import random
 
+
 def welcome_message():
     """Prints a welcome message to the user."""
     print("Welcome to the Bad-Hangman game !")
@@ -12,6 +13,7 @@ def welcome_message():
     print("Try to guess letter by letter")
     print("Have fun !!!")
 
+
 def choose_word():
     """Choose a random word for the user to guess."""
     witcher_characters = ["geralt",
@@ -19,6 +21,7 @@ def choose_word():
                           "dandelion", "eredin", "vesemir",
                           "lambert", "karadin", "imlerith"]
     return random.choice(witcher_characters)
+
 
 def display_word(word, guessed_letters):
     """
@@ -36,6 +39,8 @@ def display_word(word, guessed_letters):
             display += "_"
     print(display)
 
+
+# Code idea from "https://stackoverflow.com/"
 def take_guess(guessed_letters):
     """
     Prompt the user to guess a letter.
@@ -55,6 +60,7 @@ def take_guess(guessed_letters):
         print("You've already guessed that letter. Try again.")
         return take_guess(guessed_letters)
     return guess
+
 
 def play_hangman():
     """Play the Bad-Hangman game."""
@@ -93,6 +99,7 @@ def play_hangman():
         play_hangman()
     else:
         print("Thanks for playing!")
+
 
 # Play the game
 play_hangman()
