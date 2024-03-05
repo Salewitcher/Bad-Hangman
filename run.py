@@ -12,6 +12,7 @@ def welcome_message():
     print("The words are characters from The Witcher Universe")
     print("Try to guess letter by letter")
     print("Have fun !!!")
+    print("Have fun !!!")
 
 
 # A function to choose a random word for the user to guess
