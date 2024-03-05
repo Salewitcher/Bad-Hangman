@@ -12,7 +12,6 @@ def welcome_message():
     print("The words are characters from The Witcher Universe")
     print("Try to guess letter by letter")
     print("Have fun !!!")
-    print("Have fun !!!")
 
 
 # A function to choose a random word for the user to guess
@@ -38,12 +37,15 @@ def display_word(word, guessed_letters):
 
 
 # A function with an input for the user to guess a letter
-def take_guess():
+def take_guess(guessed_letters):
     guess = input("Guess a letter:\n").lower()
     # Validate the guess
     if len(guess) != 1 or not guess.isalpha():
         print("Please enter a single letter.")
-        return take_guess()
+        return take_guess(guessed_letters)
+    elif guess in guessed_letters:
+        print("You've already guessed that letter. Try again.")
+        return take_guess(guessed_letters)
     return guess
 
 
@@ -57,12 +59,11 @@ def play_hangman():
     max_attempts = 15
 
 
-# Code idea from "https://stackoverflow.com/"
     # While loop to call functions and add guessed letters to answer
     while True:
         print("\n")
         display_word(word, guessed_letters)
-        guess = take_guess()
+        guess = take_guess(guessed_letters)
         guessed_letters.add(guess)
         # Counter for mistakes
         if guess not in word:
@@ -81,13 +82,13 @@ def play_hangman():
             break
 
 
-# Play again or quit input
+    # Play again or quit input
     play_again = input("Do you want to play again? (Y/N):\n").upper()
     if play_again == "Y":
         play_hangman()
     else:
         print("Thanks for playing!")
-
+        
 
 # Play the game
 play_hangman()
