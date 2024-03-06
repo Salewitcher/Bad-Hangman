@@ -153,10 +153,10 @@ def draw_hangman(incorrect_guesses):
         """
         +---+
         |   |
-        |   | 
-        |  (x)
+        |  (x)  
         |  /|\
         |  / \
+        |  
         |   
       =========
         """
@@ -193,8 +193,8 @@ def play_hangman():
     word = choose_word()
     guessed_letters = set()
     incorrect_guesses = 0
-    attempts_left = 11
-    max_attempts = 11
+    attempts_left = 10
+    max_attempts = 10
 
     # While loop to call functions and add guessed letters to answer
     while True:
