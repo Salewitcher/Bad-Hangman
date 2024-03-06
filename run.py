@@ -46,7 +46,7 @@ def draw_hangman(incorrect_guesses):
         """
         +---+
         |   |
-        |    
+        |
         |   
         |   
         |  ___
@@ -152,7 +152,7 @@ def draw_hangman(incorrect_guesses):
         |  / \
         |   
       =========
-        """];   
+        """]
 
 
 # Code idea from "https://stackoverflow.com/"
