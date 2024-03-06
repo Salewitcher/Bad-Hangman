@@ -8,7 +8,7 @@ def welcome_message():
     print("It was fun to play it in the past,")
     print("at least for those of you that are my age")
     print("and still remember it :)")
-    print("HINT !")
+    print("INSTRUCTIONS !")
     print("The words are characters from The Witcher Universe")
     print("Try to guess letter by letter")
     print("Have fun !!!")
@@ -46,13 +46,113 @@ def draw_hangman(incorrect_guesses):
         """
         +---+
         |   |
+        |    
+        |   
+        |   
+        |  ___
+        |  |||
+      =========
+        """,
+        """
+        +---+
+        |   |
+        |   O 
+        |   
+        |   
+        |  ___
+        |  |||
+      =========
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |   | 
+        |  
+        |  ___
+        |  |||
+      =========
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |  /| 
+        |   
+        |  ___
+        |  |||
+      =========
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |   
+        |  ___
+        |  |||
+      =========
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |  / 
+        |  ___
+        |  |||
+      =========
+        """,   
+        """
+        +---+
+        |   |
         |   O 
         |  /|\ 
         |  / \ 
         |  ___
         |  |||
       =========
-        """,    
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |  / \ 
+        |  ___
+        |  ||
+      =========
+        """,   
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |  / \ 
+        |  ___
+        |   |
+      =========
+        """,
+        """
+        +---+
+        |   |
+        |   O 
+        |  /|\ 
+        |  / \ 
+        |  ___
+        |  
+      =========
+        """,      
+        """
+        +---+
+        |   |
+        |   | 
+        |  (x)
+        |  /|\
+        |  / \
+        |   
+      =========
+        """];   
 
 
 # Code idea from "https://stackoverflow.com/"
@@ -83,8 +183,8 @@ def play_hangman():
     word = choose_word()
     guessed_letters = set()
     incorrect_guesses = 0
-    attempts_left = 15
-    max_attempts = 15
+    attempts_left = 11
+    max_attempts = 11
 
     # While loop to call functions and add guessed letters to answer
     while True:
