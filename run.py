@@ -1,7 +1,6 @@
 import random
 import os
 
-
 def clear_terminal():
     """
     Clears the terminal window prior to new content.
@@ -11,25 +10,21 @@ def clear_terminal():
 
 def welcome_message():
     """Prints a welcome message to the user."""
-    print("Welcome to the Bad-Hangman game!")
-    print("Choose an option:")
-    print("1. Start Game")
-    print("2. Instructions")
-    print("3. Exit")
-
-
-def display_instructions():
-    """Display game instructions."""
-    print("INSTRUCTIONS:")
+    print("Welcome to the Bad-Hangman game !")
+    print("It is a game i'm sure a lot of you know.")
+    print("It was fun to play it in the past,")
+    print("at least for those of you that are my age")
+    print("and still remember it :)")
+    print("INSTRUCTIONS !")
     print("The words are characters from The Witcher Universe")
     print("Try to guess letter by letter")
-    print("You have 11 attempts before the hangman is complete.")
     print("Have fun !!!")
 
 
 def choose_word():
     """Choose a random word for the user to guess."""
-    witcher_characters = ["geralt", "yennefer", "triss", "cirilla",
+    witcher_characters = ["geralt",
+                          "yennefer", "triss", "cirilla",
                           "dandelion", "eredin", "vesemir",
                           "lambert", "karadin", "imlerith"]
     return random.choice(witcher_characters)
@@ -169,6 +164,7 @@ def draw_hangman(incorrect_guesses):
     print(hangman[incorrect_guesses])
 
 
+# Code idea from "https://stackoverflow.com/"
 def take_guess(guessed_letters):
     """
     Prompt the user to guess a letter.
@@ -191,45 +187,45 @@ def take_guess(guessed_letters):
 
 
 def play_hangman():
-    """Starts the hangman game."""
+    """Play the Bad-Hangman game."""
     clear_terminal()
     welcome_message()
-    option = input("Enter your choice: ")
+    word = choose_word()
+    guessed_letters = set()
+    incorrect_guesses = 0
+    attempts_left = 11
+    max_attempts = 11
 
-    if option == '1':
-        word = choose_word()
-        guessed_letters = set()
-        incorrect_guesses = 0
-        attempts_left = 11
-
-        while True:
-            clear_terminal()
-            print("\n")
-            display_word(word, guessed_letters)
-            draw_hangman(incorrect_guesses)
-            guess = take_guess(guessed_letters)
-            guessed_letters.add(guess)
-            
-            if guess not in word:
-                incorrect_guesses += 1
-                attempts_left -= 1
-                print("Incorrect guess!")
-                print(f"Attempts left: {attempts_left}")
-                if incorrect_guesses >= 11:
-                    print("Sorry, you lost. The word was:", word)
-                    break
-            if all(letter in guessed_letters for letter in word):
-                print("Congratulations, you won!")
+    # While loop to call functions and add guessed letters to answer
+    while True:
+        print("\n")
+        display_word(word, guessed_letters)
+        draw_hangman(incorrect_guesses)
+        guess = take_guess(guessed_letters)
+        guessed_letters.add(guess)
+        # Counter for mistakes
+        if guess not in word:
+            incorrect_guesses += 1
+            attempts_left -= 1
+            attempts_left_str = str(attempts_left)
+            print("Incorrect guess!")
+            print(f"Attempts left: {attempts_left_str}")
+            # End game if counter reaches 15 and print the right answer
+            if incorrect_guesses >= max_attempts:
+                print("Sorry, you lost. The word was:", word)
                 break
-    elif option == '2':
-        clear_terminal()
-        display_instructions()
-    elif option == '3':
-        clear_terminal()
-        print("Thanks for playing!")
-    else:
-        print("Invalid option. Please choose a valid option.")
+        # Win message
+        if all(letter in guessed_letters for letter in word):
+            print("Congratulations, you won!")
+            break
+
+    # Play again or quit input
+    play_again = input("Do you want to play again? (Y/N):\n").upper()
+    if play_again == "Y":
         play_hangman()
+    else:
+        print("Thanks for playing!")
 
 
+# Play the game
 play_hangman()
