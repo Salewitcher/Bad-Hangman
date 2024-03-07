@@ -143,11 +143,21 @@ def draw_hangman(incorrect_guesses):
         """
         +---+
         |   |
+        | ((O))< HEEEELP!!! 
+        |  /|\ 
+        |  / \ 
+        |  
+        |   /
+      =========
+        """,
+        """
+        +---+
+        |   |
         |  (X) 
         |  /|\ 
         |  / \ 
         |  
-        |  
+        |   
       =========
         """
     ]
@@ -202,11 +212,11 @@ def play_hangman():
             print(f"Attempts left: {attempts_left_str}")
             # End game if counter reaches 15 and print the right answer
             if incorrect_guesses >= max_attempts:
-                print("Sorry, you lost. The word was:", word)
+                print("Sorry, you have been UNALIVED! The word was:", word)
                 break
         # Win message
         if all(letter in guessed_letters for letter in word):
-            print("Congratulations, you won!")
+            print("Congratulations, you WON!")
             break
 
     # Play again or quit input
