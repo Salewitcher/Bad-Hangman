@@ -87,7 +87,7 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         |   O
-        |  /|\
+        |  /|\ 
         |
         |  ___
         |  |||
@@ -97,7 +97,7 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         |   O
-        |  /|\
+        |  /|\ 
         |  /
         |  ___
         |  |||
@@ -107,8 +107,8 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         |   O
-        |  /|\
-        |  / \
+        |  /|\ 
+        |  / \ 
         |  ___
         |  |||
       =========
@@ -117,8 +117,8 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         |   O
-        |  /|\
-        |  / \
+        |  /|\ 
+        |  / \ 
         |  ___
         |  ||
       =========
@@ -127,8 +127,8 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         |   O
-        |  /|\
-        |  / \
+        |  /|\ 
+        |  / \ 
         |  ___
         |   |
       =========
@@ -137,8 +137,8 @@ def draw_hangman(incorrect_guesses):
         +---+
         |   |
         | ((O))< HEEEELP!!!
-        |  /|\
-        |  / \
+        |  /|\ 
+        |  / \ 
         |
         |   /
       =========
