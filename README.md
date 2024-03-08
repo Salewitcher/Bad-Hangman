@@ -10,28 +10,81 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 4. **Guessing Rules**: Enter a single letter as your guess. You have a limited number of attempts to guess the word correctly.
 5. **Win or Lose**: If you successfully guess the word within the allowed attempts, you win! Otherwise, you lose the game.
 
-## Game Features
+# Hangman Game Features
 
-- **Random Word Selection**: A random word from the Witcher Universe is chosen for each game session.
-- **Interactive Interface**: The game provides interactive prompts and messages to guide the user through the gameplay.
-- **Counter**: A Counter for attempts left and maximum attempts.
-- **Graphics**: A Hangman graphic display.
-- **Play Again**: After each game session, players have the option to play again or quit.
+1. **Welcome Message:**
+   - Upon starting the game, players are greeted with a friendly welcome message providing instructions and background information about the game
+2. **Random Word Selection:**
+   - The game selects a random word from a predefined list of characters from The Witcher universe for players to guess.
+3. **Display Word with Underscores:**
+   - The selected word is initially displayed to the player as underscores, representing the letters to be guessed.
+4. **Guessing Letters:**
+   - Players are prompted to guess letters one by one to unveil the hidden word.
+   - Letter guesses are case-insensitive and validated to ensure they are single alphabetical characters.
+   - Players are informed if they have already guessed a letter and prompted to try again.
+5. **Display Hangman Drawings:**
+   - The game visually represents the player's progress with hangman drawings, which evolve based on the number of incorrect guesses.
+   - Each incorrect guess leads to the progression of the hangman drawing until completion.
+6. **Game Completion:**
+   - Players win the game by successfully guessing all the letters in the word before exceeding the maximum allowed incorrect guesses.
+   - A congratulatory message is displayed upon winning the game.
+   - Players lose the game if they exceed the maximum allowed incorrect guesses.
+   - A message displaying the correct word is shown upon losing the game.
+7. **Play Again Option:**
+   - After completing a game, players are given the option to play again.
+   - Players can choose to play another round or exit the game based on their preference.
+8. **Exit:**
+   - Players can choose to exit the game.
+
+
 ![Counter, quit, random word](media/Counter_quit_play_again_random.png).
 ![Counter, play again, random word](media/Win_Play_again.png).
 
 ## Testing
 
-1. **Setup**: Python was installed on the testing system as a prerequisite.
-2. **Clone the Repository**: The repository was cloned to the local machine using Git.
-3. **Navigate to the Directory**: A terminal was opened, and navigation was performed to the directory where the repository was cloned.
-4. **Run the Game**: The `hangman.py` script was executed by running `python hangman.py` in the terminal.
-5. **Game Instructions**: The on-screen instructions were followed to play the game. Letters were guessed one at a time.
-6. **Guessing Rules**: Single letters were entered as guesses, ensuring adherence to the guessing rules. Attempts were made to guess the word correctly within the limited number of attempts.
-7. **Win or Lose**: The game was tested to ensure correct outcomes when winning or losing. Winning occurred when the word was guessed within the allowed attempts, while losing occurred when the attempts were exhausted.
-8. **Play Again**: After each game session, the option to play again was selected to verify that the game restarted correctly.
-9. **PEP8**: Passed the code through a PEP8 linter and confirmed there are no problems.
+1. **PEP8**: Passed the code through a PEP8 linter and confirmed there are no problems.
 ![PEP8 Validation](media/CI_Python_Linter_Validation.png)
+
+## Manual Testing:
+
+1. **Run the Code:**
+   - Run the Python script containing the Hangman game code.
+   - Ensure that the script runs without any errors.
+2. **Welcome Message:**
+   - Upon running the script, verify that the welcome message is displayed on the terminal.
+   - Confirm that the welcome message contains the instructions and information about the game.
+3. **Word Selection:**
+   - Verify that the game selects a word from the provided list of Witcher characters.
+   - Ensure that the selected word is not visible to the player.
+4. **Guessing a Letter:**
+   - Input a valid letter when prompted to guess a letter.
+   - Ensure that the input is case-insensitive.
+   - Verify that the input is a single alphabetical character.
+   - Test guessing a letter that has already been guessed.
+5. **Displaying the Word:**
+   - After guessing a letter, check if the guessed letters are correctly displayed in the word.
+   - Ensure that the unguessed letters are displayed as underscores.
+6. **Drawing the Hangman:**
+   - Verify that the hangman drawings are displayed correctly based on the number of incorrect guesses.
+   - Confirm that the hangman drawings progress appropriately with each incorrect guess.
+7. **Game Completion:**
+   - Test scenarios where the player wins by guessing all the letters in the word.
+   - Test scenarios where the player loses by exceeding the maximum number of incorrect guesses.
+   - Ensure that appropriate win or lose messages are displayed.
+8. **Play Again Option:**
+   - After completing a game, verify that the player is prompted to play again.
+   - Test both options (Yes/No) for playing again.
+   - Ensure that the game restarts if the player chooses to play again.
+9. **Exit Game:**
+   - Test selecting 'No' when prompted to play again.
+   - Verify that the game exits gracefully with a farewell message.
+
+10. **Boundary Testing:**
+    - Test boundary conditions, such as:
+        - Guessing all letters correctly in the first attempt.
+        - Exceeding the maximum allowed incorrect guesses.
+        - Guessing the same letter multiple times.
+        - Inputting non-alphabetical characters.
 
 ## Bugs
 
@@ -52,12 +105,30 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 
 ## Deployment
 
-1. Fork or clone this repository.
-2. Create a new Heroku app.
-3. Set the buildbacks to "Python" and "NodeJS" in that order.
-4. Link the Heroku app to the repository.
-5. Click on "Deploy".
-
+1. **Log in or Register:**
+   - Log in to your Heroku account or register a new account if you don't have one already.
+2. **Create New App:**
+   - Click on 'New' in the Heroku dashboard and select 'Create New App'.
+3. **Name and Region:**
+   - Choose a unique name for your app and select your preferred region.
+4. **Create App:**
+   - Click on "Create app" to create your new Heroku app.
+5. **Settings:**
+   - Once the app is created, navigate to the 'Settings' tab.
+6. **Add Config Var:**
+   - To improve compatibility with various Python libraries, add a Config Var with Key = PORT and the Value = 8000.
+7. **Add Buildpacks:**
+   - Add two buildpacks: Python and then Node.js, in this specific order.
+8. **Deploy from GitHub:**
+   - Go back to the top of the page and click on "Deploy", then select "GitHub".
+9. **Connect to GitHub:**
+   - Scroll down and click on 'Connect to GitHub'.
+10. **Select Repository:**
+    - Search for your GitHub repository name by typing it and click on "Connect".
+11. **Deploy Branch:**
+    - Scroll down and click on "Deploy Branch" to deploy your application.  
+    - You can choose between automatic or manual deployment.
+    
 ## Dependencies
 
 This game requires Python to be installed on the system. No external libraries or dependencies are needed.
