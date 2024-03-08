@@ -43,7 +43,7 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 ## Testing
 
 1. **PEP8**: Passed the code through a PEP8 linter and confirmed there are no problems.
-![PEP8 Validation](media/CI Python Linter.png)
+![PEP8 Validation](media/CI_Python_Linter.png)
 
 ## Manual Testing:
 
