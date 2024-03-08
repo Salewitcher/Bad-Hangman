@@ -43,7 +43,7 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 ## Testing
 
 1. **PEP8**: Passed the code through a PEP8 linter and confirmed there are no problems.
-![PEP8 Validation](media/CI_Python_Linter_Validation.png)
+![PEP8 Validation](media/CI Python Linter.png)
 
 ## Manual Testing:
 
@@ -94,6 +94,8 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 - - Solution: Removed possibillity with strip() method.
 - User punished for guessing the same letter repeatedly.
 - - Solution: Added elif to prevent that.
+- VERY IMPORTANT NOTE ! : Right legs and arms of hangman flying too much to the right on deployed page if code was cleared from whitspace on CI Python Linter Validator.
+- - Solution: Add 1 whitespace to right arm and leg.
 
 ## Remainig Bugs
 
@@ -128,7 +130,7 @@ Welcome to the Bad-Hangman game! This is a simple Python implementation of the c
 11. **Deploy Branch:**
     - Scroll down and click on "Deploy Branch" to deploy your application.  
     - You can choose between automatic or manual deployment.
-    
+
 ## Dependencies
 
 This game requires Python to be installed on the system. No external libraries or dependencies are needed.
