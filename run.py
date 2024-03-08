@@ -149,18 +149,8 @@ def draw_hangman(incorrect_guesses):
         |  
         |   /
       =========
-        """,
         """
-        +---+
-        |   |
-        |  (X) 
-        |  /|\ 
-        |  / \ 
-        |  
-        |   
-      =========
-        """
-    ]
+      ]
     print(hangman[incorrect_guesses])
 
 
@@ -210,7 +200,7 @@ def play_hangman():
             attempts_left_str = str(attempts_left)
             print("Incorrect guess!")
             print(f"Attempts left: {attempts_left_str}")
-            # End game if counter reaches 15 and print the right answer
+            # End game if counter reaches 10 and print the right answer
             if incorrect_guesses >= max_attempts:
                 print("Sorry, you have been UNALIVED! The word was:", word)
                 break
@@ -220,11 +210,16 @@ def play_hangman():
             break
 
     # Play again or quit input
-    play_again = input("Do you want to play again? (Y/N):\n").upper()
-    if play_again == "Y":
-        play_hangman()
-    else:
-        print("Thanks for playing!")
+    while True:
+        play_again = input("Do you want to play again? (Y/N):\n").upper()
+        if play_again == "Y":
+            play_hangman()
+            break  # Exit the loop if the user wants to play again
+        elif play_again == "N":
+            print("Thanks for playing!")
+            break  # Exit the loop if the user doesn't want to play again
+        else:
+            print("Please choose Y or N!")
 
 
 # Play the game
