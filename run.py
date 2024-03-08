@@ -1,11 +1,4 @@
 import random
-import os
-
-def clear_terminal():
-    """
-    Clears the terminal window prior to new content.
-    """
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def welcome_message():
@@ -178,7 +171,6 @@ def take_guess(guessed_letters):
 
 def play_hangman():
     """Play the Bad-Hangman game."""
-    clear_terminal()
     welcome_message()
     word = choose_word()
     guessed_letters = set()
